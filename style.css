@@ -1,0 +1,48 @@
+:root {
+  --ink: #172033;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --surface: #f1f5f9;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px max(6%, calc((100% - 1100px) / 2));
+  border-bottom: 1px solid #e2e8f0;
+}
+.logo { color: var(--ink); font-size: 1.35rem; font-weight: 800; text-decoration: none; }
+.logo span { color: var(--accent); }
+nav { display: flex; flex-wrap: wrap; gap: 22px; }
+nav a { color: var(--muted); font-weight: 600; text-decoration: none; transition: color .2s ease; }
+nav a:hover, nav a.active { color: var(--accent); }
+.hero { padding: 90px 6%; text-align: center; background: var(--surface); }
+.hero h1 { max-width: 760px; margin: 8px auto 16px; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; }
+.hero p { color: var(--muted); }
+.eyebrow { color: var(--accent); font-size: .85rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.button { display: inline-block; margin-top: 14px; padding: 11px 20px; border: 0; border-radius: 8px; color: white; background: var(--accent); font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+.button:hover { background: #1d4ed8; }
+.content-section { max-width: 1100px; margin: auto; padding: 64px 6%; }
+.narrow { max-width: 760px; min-height: 65vh; }
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.feature, .contact-card { padding: 22px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; }
+.feature h3 { margin-top: 0; }
+.feature p, .note { color: var(--muted); }
+.contact-form { display: grid; gap: 10px; margin-top: 20px; }
+input, textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font: inherit; }
+footer { padding: 22px 6%; color: var(--muted); background: var(--surface); text-align: center; }
+@media (max-width: 700px) {
+  .site-header { align-items: flex-start; flex-direction: column; }
+  .features { grid-template-columns: 1fr; }
+  .hero { padding: 64px 6%; }
+}
